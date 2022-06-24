@@ -294,16 +294,17 @@ macrosBarPlot + geom_bar(fill="pink") +
 
 ![](/Users/ashleebrookemckeon/Desktop/ST558_Databases/project1.github.io/README_files/figure-gfm/protein%20ranking%20bar%20plot-1.png)<!-- -->
 
-**Intepretation:** FILL IN
+``` r
+macrosBarPlot
+```
 
-Now, what if I want to know the min and max protein for all of the
-recipes that contain feta, because maybe I am especially conscious of my
-protein intake. The following function will help us summarize those
-numeric data.
+![](/Users/ashleebrookemckeon/Desktop/ST558_Databases/project1.github.io/README_files/figure-gfm/protein%20ranking%20bar%20plot-2.png)<!-- -->
 
-Next, what if I’d like to graphically see the min and max amount of
-protein, carbs, and fats, aggregated across all Greek recipes that
-contain feta. The code below will produce that display for us.
+**Intepretation:** There are more recipes in this data frame that are
+considered HIGH in protein, than LOW in protein. However, it is worth
+noting that with such a small sample size it is difficult to tell if
+this pattern is representative of the true rate of proteinRanking in the
+population of all Greek recipes.
 
 ## Wrap Up
 
