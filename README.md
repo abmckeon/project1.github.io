@@ -294,12 +294,6 @@ macrosBarPlot + geom_bar(fill="pink") +
 
 ![](/Users/ashleebrookemckeon/Desktop/ST558_Databases/project1.github.io/README_files/figure-gfm/protein%20ranking%20bar%20plot-1.png)<!-- -->
 
-``` r
-macrosBarPlot
-```
-
-![](/Users/ashleebrookemckeon/Desktop/ST558_Databases/project1.github.io/README_files/figure-gfm/protein%20ranking%20bar%20plot-2.png)<!-- -->
-
 **Intepretation:** There are more recipes in this data frame that are
 considered HIGH in protein, than LOW in protein. However, it is worth
 noting that with such a small sample size it is difficult to tell if

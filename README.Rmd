@@ -227,7 +227,6 @@ boxPlotFat + geom_boxplot(fill = "blue") +
 macrosBarPlot <- ggplot(recipes_df, aes(x= proteinRanking)) 
 macrosBarPlot + geom_bar(fill="pink") +
   labs(title = "Protein Ranking Barplot", x= "Protein Ranking", y= "Count") 
-macrosBarPlot
 ```
 
 **Intepretation:**  There are more recipes in this data frame that are considered HIGH in protein, than LOW in protein. However, it is worth noting that with such a small sample size it is difficult to tell if this pattern is representative of the true rate of proteinRanking in the population of all Greek recipes. 
