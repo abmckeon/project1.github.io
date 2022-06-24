@@ -18,3 +18,8 @@ The most difficult parts were getting my user function to be modifiable for furt
 3. What would you do differently in approaching a similar project in the future?
 
 I would first confirm that I can actually find the content that the API documentation told me I would have access to with my pull. I read the documentation and then planned out my analyses in detail only to find that I then had a great deal of trouble actually being able to locate that content. Thankfully with Dr. Post's help I was able to, but without that assistance I could have potentially needed to start over. 
+
+Links:
+
+Regular Repo: https://github.com/abmckeon/st558.git
+GitHub Pages Repo: https://github.com/abmckeon/project1.github.io
