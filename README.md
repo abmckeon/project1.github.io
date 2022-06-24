@@ -200,21 +200,27 @@ Let’s look at the frequency of calories across our recipes.
 
 ``` r
 caloriesHistogram <- ggplot(recipes_df, aes(x = calories))  
-caloriesHistogram + geom_histogram(aes(color="black", fill="white"), binwidth = 2, bins = 10) +
-  labs(title = "Amount of Calories Across Recipes") 
+caloriesHistogram + geom_histogram(aes(color="black", fill="white"), binwidth = 10, bins = 10) +
+  labs(title = "Calories Across Recipes") 
 ```
 
 ![](/Users/ashleebrookemckeon/Desktop/ST558_Databases/project1.github.io/README_files/figure-gfm/histogram-1.png)<!-- -->
 
 **Intepretation:** Calories vary so widely across recipes that it is
 highly uncommon for more than one recipe to have the same number of
-calories, especially with such a sample sample size. It is recommeneded
-that this type of graph not be used on these data in the future.
+calories, especially with such a small sample size. It is recommended
+that this type of graph not be used on these data in the future. If a
+histogram is needed for these data consider recoded the number of
+calories for each recipe into “bins” made up of ranges of calories, this
+way more recipes fall in each bin. That strategy with larger sample size
+would make this visual more meaningful. It’s always important to see
+what doesn’t work though!
 
 #### Scatterplot 1
 
 What if we now wanted to know if there is a relationship between the
-amount of protein in a recipe and the amount of carbs.
+amount of protein in a recipe and the amount of carbs? A scatterplot can
+help us do that.
 
 ``` r
 correlationOne <- cor(recipes_df$protein, recipes_df$carbs, method= "spearman")
@@ -235,7 +241,8 @@ has.
 
 One may logically expect that a recipe that is high in fat will also be
 high in calories. Let’s now explore if a relationship exists between
-these two variables in our data frame.
+these two variables in our data frame. Again, we can use a scatterplot
+to visually evaluate this relationship.
 
 ``` r
 correlationTwo <- cor(recipes_df$fat, recipes_df$calories, method= "spearman")
@@ -257,14 +264,15 @@ that recipe.
 What if we wanted to get a more visual sense of the five number
 summaries for fat, but fat across the levels of calorie rankings in the
 recipes. That is, how does the distribution of fat vary between recipes
-that are consider HIGH calorie and recipes considered LOW calorie? A Box
-plot is a great way to do that! Box plots also have the ability to see
-if there are any statistical outliers in the distribution of the data.
+that are considered HIGH in calories and recipes considered LOW in
+calories? A box plot is a great way to do that! Box plots also have the
+ability to determine if there are any statistical outliers in the
+distribution of the data.
 
 ``` r
 boxPlotFat <- ggplot(recipes_df, aes(x = fat, y = caloriesRanking))
-boxPlotFat + geom_boxplot(fill = "grey") +
-  labs(title = "Boxplot for Fats Across Both Levels of Calorie Rankings")
+boxPlotFat + geom_boxplot(fill = "blue") +
+  labs(title = "Boxplot for Fats Across Both Levels of Calorie Rankings", x= "Fat", y= "Calorie Ranking")
 ```
 
 ![](/Users/ashleebrookemckeon/Desktop/ST558_Databases/project1.github.io/README_files/figure-gfm/fat%20X%20calorieRanking%20boxplots-1.png)<!-- -->
@@ -280,11 +288,11 @@ ranked LOW in calories. No statistical outliers are detected here.
 
 ``` r
 macrosBarPlot <- ggplot(recipes_df, aes(x= proteinRanking)) 
-macrosBarPlot + geom_bar() +
-  labs(title = "Recipe Macronutrients Barplot") 
+macrosBarPlot + geom_bar(fill="pink") +
+  labs(title = "Protein Ranking Barplot", x= "Protein Ranking", y= "Count") 
 ```
 
-![](/Users/ashleebrookemckeon/Desktop/ST558_Databases/project1.github.io/README_files/figure-gfm/macros%20side-by-side%20bar%20plot-1.png)<!-- -->
+![](/Users/ashleebrookemckeon/Desktop/ST558_Databases/project1.github.io/README_files/figure-gfm/protein%20ranking%20bar%20plot-1.png)<!-- -->
 
 **Intepretation:** FILL IN
 
