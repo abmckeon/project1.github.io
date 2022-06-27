@@ -125,7 +125,7 @@ oneWayMacros
 
 We can also determine how many recipes are both high in protein and low in carbs, for those looking for carb control and the facilitation of building lean muscle mass. 
 
-``` {r two way contingency, eval=TRUE}
+``` {r two way contingency}
 
 twoWayMacros <- recipes_df %>%
   group_by(proteinRanking, carbsRanking) %>%
@@ -166,7 +166,7 @@ sapply(recipes_df[c('calories', 'protein', 'carbs', 'fat')], fivenum)
 
 Let's look at the frequency of calories across our recipes. 
 
-``` {r histogram, eval=TRUE}
+``` {r histogram}
 
 caloriesHistogram <- ggplot(recipes_df, aes(x = calories))  
 caloriesHistogram + geom_histogram(aes(color="black", fill="white"), binwidth = 10, bins = 10) +
