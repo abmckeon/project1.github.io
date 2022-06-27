@@ -41,7 +41,7 @@ rmarkdown::render("/Users/ashleebrookemckeon/Desktop/ST558_Databases/project1.gi
 
 I wrote the function below to connect to the spoonacularAPI. I then ran a query to return Greek recipes, and only those Greek recipes that had at least 15 grams of protein in them. The str() was then used to learn more about what data this query contained to ensure I returned the information I was expecting. 
 
-```{r connect to spoonacularAPI, eval=FALSE}
+```{r connect to spoonacularAPI}
 
 recipeQuery <- GET("https://api.spoonacular.com/recipes/findByNutrients?apiKey=e0017c250919436bb0c6869b0c6d5ea1&cuisine=Greek&minProtein=15") #Connect to spoonacularAPI
 
@@ -50,7 +50,7 @@ str(recipeQuery, max.level = 2) #assess the structure of the query
 
 Now we will navigate to the content that has each recipe's macronutrient information in it. We then save that as an R object, selecting only the recipe title, calories, protein, fat, and carbs columns. Finally, we save and print out the data as a tibble/data frame so it will be easy to work with further. 
 
-```{r navigate to content of interest, eval=FALSE}
+```{r navigate to content of interest}
 
 recipes <- fromJSON(rawToChar(recipeQuery$content))
 str(recipes, max.level = 2) #will #show the structure of recipes
