@@ -7,7 +7,7 @@ To summarize what I did to execute this project:
 
 Interesting Findings:
 
-My exploratory analyses generated several interesting findings. The most notable findings were the strong relationship between the amount of fat a recipe had and the number of calories in that recipe. Also interested was the lack of a relationship between protein and carbs. I would have thought that relationship would be at least a bit stonger than it was. This information can be very informative to individuals wanting to understand the macronutrient breakdown commonly found in Greek recipes. 
+My exploratory analyses generated several interesting findings. The most notable findings were the strong relationship between the amount of fat a recipe had and the number of calories in that recipe. Also interested was the lack of a relationship between protein and carbs. I would have thought that relationship would be at least a bit stonger than it was. This information can be very informative to individuals wanting to better understand the macronutrient breakdown commonly found in Greek recipes. The functions in this documentation can also be easily modified by users wanting to learn about different parameters related to recipes than what I used in the current document. 
 
 Questions:
 
@@ -18,3 +18,8 @@ The most difficult parts were getting my user function to be modifiable for furt
 3. What would you do differently in approaching a similar project in the future?
 
 I would first confirm that I can actually find the content that the API documentation told me I would have access to with my pull. I read the documentation and then planned out my analyses in detail only to find that I then had a great deal of trouble actually being able to locate that content. Thankfully with Dr. Post's help I was able to, but without that assistance I could have potentially needed to start over. 
+
+Links:
+
+Regular Repo: https://github.com/abmckeon/project1.github.io
+GitHub Pages Repo: https://abmckeon.github.io/project1.github.io/
