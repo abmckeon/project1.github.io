@@ -147,7 +147,7 @@ building lean muscle mass.
 twoWayMacros <- recipes_df %>%
   group_by(proteinRanking, carbsRanking) %>%
   summarise(count = n()) 
-twoWayMacros
+print(twoWayMacros)
 ```
 
 **Intepretation:** 40% or 4/10 recipes are high in protein (i.e., \>30g)
@@ -205,6 +205,12 @@ caloriesHistogram + geom_histogram(aes(color="black", fill="white"), binwidth = 
 ```
 
 ![](/Users/ashleebrookemckeon/Desktop/ST558_Databases/project1.github.io/README_files/figure-gfm/histogram-1.png)<!-- -->
+
+``` r
+caloriesHistogram
+```
+
+![](/Users/ashleebrookemckeon/Desktop/ST558_Databases/project1.github.io/README_files/figure-gfm/histogram-2.png)<!-- -->
 *Intepretation:* Calories vary so widely across recipes that it is
 highly uncommon for more than one recipe to have the same number of
 calories, especially with such a small sample size. It is recommended

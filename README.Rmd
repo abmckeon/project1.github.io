@@ -130,7 +130,7 @@ We can also determine how many recipes are both high in protein and low in carbs
 twoWayMacros <- recipes_df %>%
   group_by(proteinRanking, carbsRanking) %>%
   summarise(count = n()) 
-twoWayMacros
+print(twoWayMacros)
 ```
 
 **Intepretation:** 40% or 4/10 recipes are high in protein (i.e., >30g) and low in carbs (i.e., <=50g). 
@@ -171,6 +171,7 @@ Let's look at the frequency of calories across our recipes.
 caloriesHistogram <- ggplot(recipes_df, aes(x = calories))  
 caloriesHistogram + geom_histogram(aes(color="black", fill="white"), binwidth = 10, bins = 10) +
   labs(title = "Calories Across Recipes") 
+caloriesHistogram
 ```
 *Intepretation:* Calories vary so widely across recipes that it is highly uncommon for more than one recipe to have the same number of calories, especially with such a small sample size. It is recommended that this type of graph not be used on these data in the future. If a histogram is needed for these data consider recoded the number of calories for each recipe into "bins" made up of ranges of calories, this way more recipes fall in each bin. That strategy with larger sample size would make this visual more meaningful. It's always important to see what doesn't work though!
 
