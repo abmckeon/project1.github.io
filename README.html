@@ -657,7 +657,7 @@ so it will be easy to work with further.</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>recipes <span class="ot">&lt;-</span> <span class="fu">fromJSON</span>(<span class="fu">rawToChar</span>(recipeQuery<span class="sc">$</span>content))</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(recipes, <span class="at">max.level =</span> <span class="dv">2</span>) <span class="co">#will #show the structure of recipes</span></span></code></pre></div>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>recipes_df <span class="ot">&lt;-</span> <span class="fu">select</span>(recipes, title, calories, protein, fat, carbs)</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>recipes_df</span></code></pre></div>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">as_tibble</span>(recipes_df)</span></code></pre></div>
 <p>We now have a parsed data frame to work with that includes the recipe
 content we are interested in!</p>
 <h2 id="api-interaction-functions">API Interaction Functions</h2>
@@ -706,8 +706,7 @@ creation of these new variables is below.</p>
 protein.</p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>oneWayMacros <span class="ot">&lt;-</span> recipes_df <span class="sc">%&gt;%</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(proteinRanking) <span class="sc">%&gt;%</span></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">count =</span> <span class="fu">n</span>())</span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>oneWayMacros</span></code></pre></div>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">count =</span> <span class="fu">n</span>())</span></code></pre></div>
 <p><strong>Intepretation:</strong> The majority of recipes are high in
 protein (i.e. &gt;30g).</p>
 <h4 id="two-way-contingency-table">Two Way Contingency Table</h4>

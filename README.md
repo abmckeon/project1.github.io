@@ -62,7 +62,7 @@ str(recipes, max.level = 2) #will #show the structure of recipes
 
 ``` r
 recipes_df <- select(recipes, title, calories, protein, fat, carbs)
-recipes_df
+as_tibble(recipes_df)
 ```
 
 We now have a parsed data frame to work with that includes the recipe
@@ -131,7 +131,6 @@ We can examine how many of the recipes are high and low in protein.
 oneWayMacros <- recipes_df %>%
   group_by(proteinRanking) %>%
   summarise(count = n())
-oneWayMacros
 ```
 
 **Intepretation:** The majority of recipes are high in protein
