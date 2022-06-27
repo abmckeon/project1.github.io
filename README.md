@@ -49,58 +49,6 @@ recipeQuery <- GET("https://api.spoonacular.com/recipes/findByNutrients?apiKey=e
 str(recipeQuery, max.level = 2) #assess the structure of the query
 ```
 
-    ## List of 10
-    ##  $ url        : chr "https://api.spoonacular.com/recipes/findByNutrients?apiKey=e0017c250919436bb0c6869b0c6d5ea1&cuisine=Greek&minProtein=15"
-    ##  $ status_code: int 200
-    ##  $ headers    :List of 19
-    ##   ..$ date                        : chr "Mon, 27 Jun 2022 02:20:00 GMT"
-    ##   ..$ content-type                : chr "application/json"
-    ##   ..$ content-length              : chr "593"
-    ##   ..$ allow-control-allow-origin  : chr "*"
-    ##   ..$ access-control-allow-origin : chr "*"
-    ##   ..$ access-control-allow-headers: chr "Authorization, UserId, Hash, Name, Password, Accept, Accept-Language, Content-Language, Content-Type, Cache-Con"| __truncated__
-    ##   ..$ access-control-allow-methods: chr "GET, HEAD, POST, OPTIONS, DELETE, PUT"
-    ##   ..$ allow-control-allow-methods : chr "GET, HEAD, POST, OPTIONS, DELETE, PUT"
-    ##   ..$ x-api-quota-request         : chr "1.1"
-    ##   ..$ x-api-quota-used            : chr "8.35"
-    ##   ..$ x-api-quota-left            : chr "141.65"
-    ##   ..$ content-encoding            : chr "gzip"
-    ##   ..$ cf-cache-status             : chr "DYNAMIC"
-    ##   ..$ expect-ct                   : chr "max-age=604800, report-uri=\"https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\""
-    ##   ..$ report-to                   : chr "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=4QjRYDOgHMslOtkhEC0LYZl%2BSxnpCyiQg"| __truncated__
-    ##   ..$ nel                         : chr "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}"
-    ##   ..$ server                      : chr "cloudflare"
-    ##   ..$ cf-ray                      : chr "721ab3746a3581c9-IAD"
-    ##   ..$ alt-svc                     : chr "h3=\":443\"; ma=86400, h3-29=\":443\"; ma=86400"
-    ##   ..- attr(*, "class")= chr [1:2] "insensitive" "list"
-    ##  $ all_headers:List of 1
-    ##   ..$ :List of 3
-    ##  $ cookies    :'data.frame': 0 obs. of  7 variables:
-    ##   ..$ domain    : logi(0) 
-    ##   ..$ flag      : logi(0) 
-    ##   ..$ path      : logi(0) 
-    ##   ..$ secure    : logi(0) 
-    ##   ..$ expiration: 'POSIXct' num(0) 
-    ##   ..$ name      : logi(0) 
-    ##   ..$ value     : logi(0) 
-    ##  $ content    : raw [1:1997] 5b 7b 22 69 ...
-    ##  $ date       : POSIXct[1:1], format: "2022-06-27 02:20:00"
-    ##  $ times      : Named num [1:6] 0 0.0643 0.094 0.2932 0.4856 ...
-    ##   ..- attr(*, "names")= chr [1:6] "redirect" "namelookup" "connect" "pretransfer" ...
-    ##  $ request    :List of 7
-    ##   ..$ method    : chr "GET"
-    ##   ..$ url       : chr "https://api.spoonacular.com/recipes/findByNutrients?apiKey=e0017c250919436bb0c6869b0c6d5ea1&cuisine=Greek&minProtein=15"
-    ##   ..$ headers   : Named chr "application/json, text/xml, application/xml, */*"
-    ##   .. ..- attr(*, "names")= chr "Accept"
-    ##   ..$ fields    : NULL
-    ##   ..$ options   :List of 2
-    ##   ..$ auth_token: NULL
-    ##   ..$ output    : list()
-    ##   .. ..- attr(*, "class")= chr [1:2] "write_memory" "write_function"
-    ##   ..- attr(*, "class")= chr "request"
-    ##  $ handle     :Class 'curl_handle' <externalptr> 
-    ##  - attr(*, "class")= chr "response"
-
 Now we will navigate to the content that has each recipe’s macronutrient
 information in it. We then save that as an R object, selecting only the
 recipe title, calories, protein, fat, and carbs columns. Finally, we
@@ -111,16 +59,6 @@ work with further.
 recipes <- fromJSON(rawToChar(recipeQuery$content))
 str(recipes, max.level = 2) #will #show the structure of recipes
 ```
-
-    ## 'data.frame':    10 obs. of  8 variables:
-    ##  $ id       : int  637966 644167 644826 645354 649048 650632 657095 657226 663822 663824
-    ##  $ title    : chr  "Chicken Brats & Root Beer BBQ Sauce" "Garam Masala Pork Chops with Mint Yogurt and Spiced Couscous" "Gluten Free Dairy Free Sugar Free Chinese Chicken Salad" "Greek Shrimp Orzo" ...
-    ##  $ image    : chr  "https://spoonacular.com/recipeImages/637966-312x231.jpg" "https://spoonacular.com/recipeImages/644167-312x231.jpg" "https://spoonacular.com/recipeImages/644826-312x231.jpg" "https://spoonacular.com/recipeImages/645354-312x231.jpg" ...
-    ##  $ imageType: chr  "jpg" "jpg" "jpg" "jpg" ...
-    ##  $ calories : int  513 466 351 558 937 217 458 873 508 554
-    ##  $ protein  : chr  "20g" "45g" "31g" "29g" ...
-    ##  $ fat      : chr  "19g" "16g" "15g" "28g" ...
-    ##  $ carbs    : chr  "64g" "34g" "27g" "47g" ...
 
 ``` r
 recipes_df <- select(recipes, title, calories, protein, fat, carbs)
@@ -266,16 +204,15 @@ caloriesHistogram + geom_histogram(aes(color="black", fill="white"), binwidth = 
   labs(title = "Calories Across Recipes") 
 ```
 
-![](/Users/ashleebrookemckeon/Desktop/ST558_Databases/project1.github.io/README_files/figure-gfm/histogram-1.png)<!-- -->
-*Intepretation:* Calories vary so widely across recipes that it is
-highly uncommon for more than one recipe to have the same number of
-calories, especially with such a small sample size. It is recommended
-that this type of graph not be used on these data in the future. If a
-histogram is needed for these data consider recoded the number of
-calories for each recipe into “bins” made up of ranges of calories, this
-way more recipes fall in each bin. That strategy with larger sample size
-would make this visual more meaningful. It’s always important to see
-what doesn’t work though!
+![](README_files/figure-gfm/histogram-1.png)<!-- --> *Intepretation:*
+Calories vary so widely across recipes that it is highly uncommon for
+more than one recipe to have the same number of calories, especially
+with such a small sample size. It is recommended that this type of graph
+not be used on these data in the future. If a histogram is needed for
+these data consider recoded the number of calories for each recipe into
+“bins” made up of ranges of calories, this way more recipes fall in each
+bin. That strategy with larger sample size would make this visual more
+meaningful. It’s always important to see what doesn’t work though!
 
 #### Scatterplot 1
 
@@ -292,7 +229,7 @@ scatterplotProteinCarbs + geom_point() +
   geom_text(x = 70, y = 10, size = 4, label = paste0("Correlation = ", round(correlationOne, 2))) 
 ```
 
-![](/Users/ashleebrookemckeon/Desktop/ST558_Databases/project1.github.io/README_files/figure-gfm/scatterplot%201-1.png)<!-- -->
+![](README_files/figure-gfm/scatterplot%201-1.png)<!-- -->
 *Intepretation:* There is a very weak positive linear relationship
 between the amount of protein a recipe has and the amount of carbs it
 has.
@@ -313,7 +250,7 @@ scatterplotFatCalories + geom_point() +
   geom_text(x = 40, y = 300, size = 4, label = paste0("Correlation = ", round(correlationTwo, 2))) 
 ```
 
-![](/Users/ashleebrookemckeon/Desktop/ST558_Databases/project1.github.io/README_files/figure-gfm/scatterplot%202-1.png)<!-- -->
+![](README_files/figure-gfm/scatterplot%202-1.png)<!-- -->
 *Intepretation:* There is a very strong positive linear relationship
 between the amount of fat a recipe has and the number of calories in
 that recipe.
@@ -334,7 +271,7 @@ boxPlotFat + geom_boxplot(fill = "blue") +
   labs(title = "Boxplot for Fats Across Both Levels of Calorie Rankings", x= "Fat", y= "Calorie Ranking")
 ```
 
-![](/Users/ashleebrookemckeon/Desktop/ST558_Databases/project1.github.io/README_files/figure-gfm/fat%20X%20calorieRanking%20boxplots-1.png)<!-- -->
+![](README_files/figure-gfm/fat%20X%20calorieRanking%20boxplots-1.png)<!-- -->
 *Intepretation:* The boxplot shows that the distribution for fats in
 recipes LOW in calories is a bit skewed to the right, with a very small
 spread in the data. We do also see one statistical outlier. For recipes
@@ -350,7 +287,7 @@ macrosBarPlot + geom_bar(fill="pink") +
   labs(title = "Protein Ranking Barplot", x= "Protein Ranking", y= "Count") 
 ```
 
-![](/Users/ashleebrookemckeon/Desktop/ST558_Databases/project1.github.io/README_files/figure-gfm/protein%20ranking%20bar%20plot-1.png)<!-- -->
+![](README_files/figure-gfm/protein%20ranking%20bar%20plot-1.png)<!-- -->
 *Intepretation:* There are more recipes in this data frame that are
 considered HIGH in protein, than LOW in protein. However, it is worth
 noting that with such a small sample size it is difficult to tell if
