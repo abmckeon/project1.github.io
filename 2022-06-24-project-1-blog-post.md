@@ -1,3 +1,8 @@
+ST 558
+Project 1
+Ashlee McKeon
+6-26-2022
+
 To summarize what I did to execute this project:
 
 *  I installed and loaded the packages needed for connection, query, and analysis of the spoonacularAPI. 
