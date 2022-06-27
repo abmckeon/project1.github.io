@@ -53,7 +53,7 @@ str(recipeQuery, max.level = 2) #assess the structure of the query
     ##  $ url        : chr "https://api.spoonacular.com/recipes/findByNutrients?apiKey=e0017c250919436bb0c6869b0c6d5ea1&cuisine=Greek&minProtein=15"
     ##  $ status_code: int 200
     ##  $ headers    :List of 19
-    ##   ..$ date                        : chr "Mon, 27 Jun 2022 02:08:20 GMT"
+    ##   ..$ date                        : chr "Mon, 27 Jun 2022 02:20:00 GMT"
     ##   ..$ content-type                : chr "application/json"
     ##   ..$ content-length              : chr "593"
     ##   ..$ allow-control-allow-origin  : chr "*"
@@ -62,15 +62,15 @@ str(recipeQuery, max.level = 2) #assess the structure of the query
     ##   ..$ access-control-allow-methods: chr "GET, HEAD, POST, OPTIONS, DELETE, PUT"
     ##   ..$ allow-control-allow-methods : chr "GET, HEAD, POST, OPTIONS, DELETE, PUT"
     ##   ..$ x-api-quota-request         : chr "1.1"
-    ##   ..$ x-api-quota-used            : chr "2.2"
-    ##   ..$ x-api-quota-left            : chr "147.8"
+    ##   ..$ x-api-quota-used            : chr "8.35"
+    ##   ..$ x-api-quota-left            : chr "141.65"
     ##   ..$ content-encoding            : chr "gzip"
     ##   ..$ cf-cache-status             : chr "DYNAMIC"
     ##   ..$ expect-ct                   : chr "max-age=604800, report-uri=\"https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\""
-    ##   ..$ report-to                   : chr "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=qRjxVbGlJd8KXKltMn4xaK8rod1OgfjHfmO"| __truncated__
+    ##   ..$ report-to                   : chr "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=4QjRYDOgHMslOtkhEC0LYZl%2BSxnpCyiQg"| __truncated__
     ##   ..$ nel                         : chr "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}"
     ##   ..$ server                      : chr "cloudflare"
-    ##   ..$ cf-ray                      : chr "721aa260aac537f9-IAD"
+    ##   ..$ cf-ray                      : chr "721ab3746a3581c9-IAD"
     ##   ..$ alt-svc                     : chr "h3=\":443\"; ma=86400, h3-29=\":443\"; ma=86400"
     ##   ..- attr(*, "class")= chr [1:2] "insensitive" "list"
     ##  $ all_headers:List of 1
@@ -84,8 +84,8 @@ str(recipeQuery, max.level = 2) #assess the structure of the query
     ##   ..$ name      : logi(0) 
     ##   ..$ value     : logi(0) 
     ##  $ content    : raw [1:1997] 5b 7b 22 69 ...
-    ##  $ date       : POSIXct[1:1], format: "2022-06-27 02:08:20"
-    ##  $ times      : Named num [1:6] 0 0.000081 0.000087 0.000242 0.44776 ...
+    ##  $ date       : POSIXct[1:1], format: "2022-06-27 02:20:00"
+    ##  $ times      : Named num [1:6] 0 0.0643 0.094 0.2932 0.4856 ...
     ##   ..- attr(*, "names")= chr [1:6] "redirect" "namelookup" "connect" "pretransfer" ...
     ##  $ request    :List of 7
     ##   ..$ method    : chr "GET"
