@@ -21,5 +21,5 @@ I would first confirm that I can actually find the content that the API document
 
 Links:
 
-Regular Repo: https://github.com/abmckeon/st558.git
-GitHub Pages Repo: https://github.com/abmckeon/project1.github.io
+Regular Repo: https://github.com/abmckeon/project1.github.io
+GitHub Pages Repo: https://abmckeon.github.io/project1.github.io/
