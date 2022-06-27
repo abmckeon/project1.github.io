@@ -7,7 +7,7 @@ To summarize what I did to execute this project:
 
 Interesting Findings:
 
-My exploratory analyses generated several interesting findings. The most notable findings were the strong relationship between the amount of fat a recipe had and the number of calories in that recipe. Also interested was the lack of a relationship between protein and carbs. I would have thought that relationship would be at least a bit stonger than it was. This information can be very informative to individuals wanting to understand the macronutrient breakdown commonly found in Greek recipes. 
+My exploratory analyses generated several interesting findings. The most notable findings were the strong relationship between the amount of fat a recipe had and the number of calories in that recipe. Also interested was the lack of a relationship between protein and carbs. I would have thought that relationship would be at least a bit stonger than it was. This information can be very informative to individuals wanting to better understand the macronutrient breakdown commonly found in Greek recipes. The functions in this documentation can also be easily modified by users wanting to learn about different parameters related to recipes than what I used in the current document. 
 
 Questions:
 
