@@ -205,8 +205,7 @@ caloriesHistogram + geom_histogram(aes(color="black", fill="white"), binwidth = 
 ```
 
 ![](/Users/ashleebrookemckeon/Desktop/ST558_Databases/project1.github.io/README_files/figure-gfm/histogram-1.png)<!-- -->
-
-**Intepretation:** Calories vary so widely across recipes that it is
+*Intepretation:* Calories vary so widely across recipes that it is
 highly uncommon for more than one recipe to have the same number of
 calories, especially with such a small sample size. It is recommended
 that this type of graph not be used on these data in the future. If a
@@ -232,8 +231,7 @@ scatterplotProteinCarbs + geom_point() +
 ```
 
 ![](/Users/ashleebrookemckeon/Desktop/ST558_Databases/project1.github.io/README_files/figure-gfm/scatterplot%201-1.png)<!-- -->
-
-**Intepretation:** There is a very weak positive linear relationship
+*Intepretation:* There is a very weak positive linear relationship
 between the amount of protein a recipe has and the amount of carbs it
 has.
 
@@ -254,8 +252,7 @@ scatterplotFatCalories + geom_point() +
 ```
 
 ![](/Users/ashleebrookemckeon/Desktop/ST558_Databases/project1.github.io/README_files/figure-gfm/scatterplot%202-1.png)<!-- -->
-
-**Intepretation:** There is a very strong positive linear relationship
+*Intepretation:* There is a very strong positive linear relationship
 between the amount of fat a recipe has and the number of calories in
 that recipe.
 
@@ -276,15 +273,14 @@ boxPlotFat + geom_boxplot(fill = "blue") +
 ```
 
 ![](/Users/ashleebrookemckeon/Desktop/ST558_Databases/project1.github.io/README_files/figure-gfm/fat%20X%20calorieRanking%20boxplots-1.png)<!-- -->
-
-**Intepretation:** The boxplot shows that the distribution for fats in
+*Intepretation:* The boxplot shows that the distribution for fats in
 recipes LOW in calories is a bit skewed to the right, with a very small
 spread in the data. We do also see one statistical outlier. For recipes
 considered HIGH in calories we see a normal distirbution of fat across
 recipes, but with a much wider spread when compared to the recipes
 ranked LOW in calories. No statistical outliers are detected here.
 
-#### Side-by-Side Bar Plot
+#### Bar Plot
 
 ``` r
 macrosBarPlot <- ggplot(recipes_df, aes(x= proteinRanking)) 
@@ -293,8 +289,7 @@ macrosBarPlot + geom_bar(fill="pink") +
 ```
 
 ![](/Users/ashleebrookemckeon/Desktop/ST558_Databases/project1.github.io/README_files/figure-gfm/protein%20ranking%20bar%20plot-1.png)<!-- -->
-
-**Intepretation:** There are more recipes in this data frame that are
+*Intepretation:* There are more recipes in this data frame that are
 considered HIGH in protein, than LOW in protein. However, it is worth
 noting that with such a small sample size it is difficult to tell if
 this pattern is representative of the true rate of proteinRanking in the
@@ -319,7 +314,10 @@ To summarize what I did to execute this project:
         the amount of fat a recipe had and the number of calories in
         that recipe. Also interested was the lack of a relationship
         between protein and carbs. I would have thought that
-        relationship would be at least a bit stonger than it was. This
+        relationship would be at least a bit stronger than it was. This
         information can be very informative to individuals wanting to
-        understand the macronutrient breakdown commonly found in Greek
-        recipes.
+        better understand the macronutrient breakdown commonly found in
+        Greek recipes. The functions in this documentation can also be
+        easily modified by users wanting to learn about different
+        parameters related to recipes than what I used in the current
+        document.
